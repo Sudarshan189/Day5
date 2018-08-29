@@ -34,8 +34,6 @@ public class Student {
 		this.name = name;
 		this.age = age;
 		this.course = course;
-
-		System.out.println("User Created");
 	}
 
 }

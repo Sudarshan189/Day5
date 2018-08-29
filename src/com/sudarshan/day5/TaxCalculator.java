@@ -5,30 +5,24 @@ import com.sudarshan.day5.exceptions.EmployeeNameInvalidException;
 import com.sudarshan.day5.exceptions.TaxNotEligibleException;
 
 public class TaxCalculator {
-	private String empName;
-	private boolean isIndian;
-	private double empSal;
 
-	private double taxAmount;
+	
 
 	public TaxCalculator() {
 		super();
 	}
 
-	public TaxCalculator(String empName, boolean isIndian, double empSal) {
-		this.empName = empName;
-		this.isIndian = isIndian;
-		this.empSal = empSal;
-	}
+	
 
-	public double calculateTax()
+	public static double calculateTax(String empName, boolean isIndian, double empSal)
 			throws TaxNotEligibleException, EmployeeNameInvalidException, CountryNotValidException {
-		if (empName.equals("") || empName == null) {
-			throw new EmployeeNameInvalidException("Employee Nmae Cannot be empty");
+		double taxAmount;
+		if ( empName == null || empName.equals("")) {
+			throw new EmployeeNameInvalidException("The employee name cannot be empty");
 		}
 
 		if (!isIndian) {
-			throw new CountryNotValidException("Employee should be Indian");
+			throw new CountryNotValidException("The employee should be an Indian citizen for calculating tax");
 		}
 
 		if (empSal >= 10_0_000) {
