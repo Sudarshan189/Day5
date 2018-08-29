@@ -10,18 +10,18 @@ public class Factorial {
 		// TODO Auto-generated constructor stub
 	}
 
-	public static long getFactorial(int num) throws InvalidInputException, FactorialException {
-		long result = 0;
+	public static int getFactorial(int num) throws InvalidInputException, FactorialException {
+		int result = 0;
 		if (num < 2) {
 			throw new InvalidInputException("Invalid input given");
 		}
 
 		result = factorialFunction(num);
 
-		if (result < Integer.MAX_VALUE) {
+		if (result < 0) {
 			throw new FactorialException("Integer range exceeds");
 		}
-
+		
 		return result;
 
 	}
