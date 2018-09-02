@@ -21,10 +21,10 @@ class FactorialTest {
 		assertThrows(InvalidInputException.class, ()->Factorial.getFactorial(-5));
 	}
 	
-//	@Test
-//	void testGetFactorialMaxCross() {
-//		assertThrows(FactorialException.class, ()->Factorial.getFactorial(Integer.MAX_VALUE));
-//	}
+	@Test
+	void testGetFactorialMaxCross() {
+		assertThrows(FactorialException.class, ()->Factorial.getFactorial(Integer.MAX_VALUE));
+	}
 
 
 }

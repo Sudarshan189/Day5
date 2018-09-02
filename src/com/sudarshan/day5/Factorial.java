@@ -17,19 +17,18 @@ public class Factorial {
 		}
 
 		result = factorialFunction(num);
-
-		if (result < 0) {
-			throw new FactorialException("Integer range exceeds");
-		}
-		
 		return result;
-
 	}
 
-	private static int factorialFunction(int num) {
+	private static int factorialFunction(int num) throws FactorialException {
 		int fact = 1;
+		int prevResult;
 		for (int i = 1; i <= num; i++) {
+			prevResult = fact;
 			fact = fact * i;
+			if (fact < prevResult) {
+				throw new FactorialException("Integer range exceeds");
+			}
 		}
 		return fact;
 	}
